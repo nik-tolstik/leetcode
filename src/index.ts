@@ -1,3 +1,3 @@
-import { lastStoneWeight } from "./1046-last-stone-weight/solution";
+import { twoSum } from "./167-two-sum-ii-input-array-is-sorted/solution";
 
-lastStoneWeight([2, 7, 4, 1, 8, 1]);
+twoSum([3, 24, 50, 79, 88, 150, 345], 200);
