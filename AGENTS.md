@@ -1,12 +1,3 @@
-# Project Instructions
-
-- Prefer `pnpm` for dependency management and commands.
-- Do not use `corepack`.
-- Write all comments in English.
-- Use interactive `zsh` for shell commands.
-- Use the Context7 MCP server for library and framework documentation when it is relevant.
-- Always create worktrees inside the current repository.
-
 ## LeetCode Task Scaffolding
 
 When the user provides a LeetCode problem statement, URL, title, or number and asks to prepare a task in this project, create only the task scaffold. Do not implement the algorithmic solution.

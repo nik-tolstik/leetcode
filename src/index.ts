@@ -1,3 +1,18 @@
-import { twoSum } from "./167-two-sum-ii-input-array-is-sorted/solution";
+import { fibGenerator } from "./2648-generate-fibonacci-sequence/solution";
 
-twoSum([3, 24, 50, 79, 88, 150, 345], 200);
+const gen = fibGenerator();
+
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
