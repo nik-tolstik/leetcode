@@ -1,8 +1,14 @@
 // https://leetcode.com/problems/search-in-rotated-sorted-array/
 
 export function search(nums: number[], target: number): number {
-  void nums;
-  void target;
+  let k = 0;
 
-  throw new Error("Not implemented");
+  while (k <= Math.round(nums.length / 2)) {
+    if (target === nums[k]) return k;
+    if (target === nums[nums.length - 1 - k]) return nums.length - 1 - k;
+
+    k++;
+  }
+
+  return -1;
 }
