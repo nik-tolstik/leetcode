@@ -11,7 +11,22 @@ export class Node {
 }
 
 export function cloneGraph(node: Node | null): Node | null {
-  void node;
+  function clone(node: Node | null, map: Map<Node, Node> = new Map()): Node {
+    if (!node) return null;
 
-  throw new Error("Not implemented");
+    if (map.has(node)) {
+      return map.get(node);
+    }
+
+    const copiedNode = new Node(node.val, []);
+    map.set(node, copiedNode);
+
+    node.neighbors.forEach((n) => {
+      copiedNode.neighbors.push(clone(n, map));
+    });
+
+    return copiedNode;
+  }
+
+  return clone(node);
 }

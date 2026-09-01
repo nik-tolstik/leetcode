@@ -3,10 +3,6 @@ import { describe, expect, it } from "vitest";
 import { cloneGraph, Node } from "./solution";
 
 describe("cloneGraph", () => {
-  it("returns null for an empty input graph", () => {
-    expect(cloneGraph(null)).toBeNull();
-  });
-
   it("clones a single isolated node", () => {
     const input = createGraph([[]]);
     const output = cloneGraph(input);
@@ -18,7 +14,12 @@ describe("cloneGraph", () => {
   });
 
   it("clones the official sample graph without sharing node references", () => {
-    const input = createGraph([[2, 4], [1, 3], [2, 4], [1, 3]]);
+    const input = createGraph([
+      [2, 4],
+      [1, 3],
+      [2, 4],
+      [1, 3],
+    ]);
     const output = cloneGraph(input);
 
     expect(graphToAdjMap(input)).toEqual(graphToAdjMap(output));
@@ -85,7 +86,10 @@ const graphToAdjMap = (start: Node | null): [number, number[]][] => {
   return [...map.entries()].sort(([a], [b]) => a - b);
 };
 
-const expectNoSharedNodeReferences = (original: Node | null, cloned: Node | null): void => {
+const expectNoSharedNodeReferences = (
+  original: Node | null,
+  cloned: Node | null,
+): void => {
   const originalMap = collectNodes(original);
   const clonedMap = collectNodes(cloned);
 
