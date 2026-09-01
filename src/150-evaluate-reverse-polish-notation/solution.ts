@@ -1,7 +1,26 @@
 // https://leetcode.com/problems/evaluate-reverse-polish-notation/
 
 export function evalRPN(tokens: string[]): number {
-  void tokens;
+  const stack: number[] = [];
 
-  throw new Error("Not implemented");
+  tokens.forEach((token) => {
+    if (["+", "-", "*", "/"].includes(token)) {
+      const right = stack.pop();
+      const left = stack.pop();
+
+      if (token === "+") {
+        stack.push(left + right);
+      } else if (token === "-") {
+        stack.push(left - right);
+      } else if (token === "*") {
+        stack.push(left * right);
+      } else if (token === "/") {
+        stack.push(Math.trunc(left / right));
+      }
+    } else {
+      stack.push(Number(token));
+    }
+  });
+
+  return stack.pop();
 }
